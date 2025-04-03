@@ -13,3 +13,14 @@ def generate_maze(rows, cols):
         
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         random.shuffle(directions)
+
+        for dx, dy in directions:
+            nx, ny = x + dx, y + dy
+        
+            if 0 < nx < rows - 1 and 0 < ny < cols - 1 and maze[nx][ny] == '#':
+                maze[nx][ny] = ' '
+                carve_path(nx, ny)
+
+    
+    carve_path(1, 1)
+    return maze
