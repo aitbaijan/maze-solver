@@ -8,3 +8,8 @@ def generate_maze(rows, cols):
 
     maze[start[0]][start[1]] = 'S'
     maze[end[0]][end[1]] = 'E'
+
+    def carve_path(x, y):
+        
+        directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+        random.shuffle(directions)
