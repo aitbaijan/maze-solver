@@ -58,3 +58,11 @@ def print_maze(maze):
     maze = generate_maze(rows, cols)
     path = []
     find_path(maze, 0, 0, path, rows, cols)
+
+    print("\nЛабиринт с решением:")
+    print_maze(maze)
+    print("\nПуть к выходу:")
+    print(path)
+
+if name == "__main__":
+    main()
