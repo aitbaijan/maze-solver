@@ -50,3 +50,7 @@ def find_path(maze, x, y, path, rows, cols):
 def print_maze(maze):
     for row in maze:
         print(' '.join(row))
+
+        def main():
+            rows = int(input("Введите количество строк лабиринта: ") or 10)
+            cols = int(input("Введите количество столбцов лабиринта: ") or 10)
