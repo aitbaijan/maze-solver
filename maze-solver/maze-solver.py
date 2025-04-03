@@ -54,3 +54,7 @@ def print_maze(maze):
         def main():
             rows = int(input("Введите количество строк лабиринта: ") or 10)
             cols = int(input("Введите количество столбцов лабиринта: ") or 10)
+
+    maze = generate_maze(rows, cols)
+    path = []
+    find_path(maze, 0, 0, path, rows, cols)
