@@ -24,3 +24,25 @@ def generate_maze(rows, cols):
     
     carve_path(1, 1)
     return maze
+
+def find_path(maze, x, y, path, rows, cols):
+    if (x, y) == (rows - 1, cols - 1):
+        path.append((x, y))
+        return True
+    
+    if 0 <= x < rows and 0 <= y < cols and maze[x][y] == ' ':
+
+        maze[x][y] = '.'
+        path.append((x, y))
+
+    
+        directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+        for dx, dy in directions:
+            if find_path(maze, x + dx, y + dy, path, rows, cols):
+                return True
+        
+    
+        path.pop()
+        maze[x][y] = ' '
+    
+    return False
