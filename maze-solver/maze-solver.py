@@ -46,3 +46,7 @@ def find_path(maze, x, y, path, rows, cols):
         maze[x][y] = ' '
     
     return False
+
+def print_maze(maze):
+    for row in maze:
+        print(' '.join(row))
